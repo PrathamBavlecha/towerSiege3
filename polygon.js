@@ -1,11 +1,15 @@
 class Polygon{
     constructor(){
-        this.body = Bodies.circle(50,200,40,{isStatic:false})
+        var options = {
+            density:4,
+            isStatic:false  
+        }
+        this.body = Bodies.circle(50,200,40,options)
         this.image = loadImage("polygon.png")
         World.add(world,this.body)
     }display(){
         push ()
-        imageMode (RADIUS)
+        imageMode (CENTER)
         image(this.image,this.body.position.x,this.body.position.y,40,40)
         pop ()
     }
