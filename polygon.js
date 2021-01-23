@@ -4,7 +4,7 @@ class Polygon{
             density:4,
             isStatic:false  
         }
-        this.body = Bodies.circle(50,200,40,options)
+        this.body = Bodies.circle(300,350,40,options)
         this.image = loadImage("polygon.png")
         World.add(world,this.body)
     }display(){
