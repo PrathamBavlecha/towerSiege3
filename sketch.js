@@ -4,6 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
+var score = 0;
 
 function setup(){
     var canvas = createCanvas(1200,700);
@@ -12,8 +13,8 @@ function setup(){
 
     ground = new Ground(600,695,1200,10)
 
-    stand1 = new Ground(800,600,250,10)
-    stand2 = new Ground(1000,400,250,10)
+    stand1 = new Ground(800,590,250,10)
+    stand2 = new Ground(1000,390,250,10)
 
     block7 = new Box(710,570,"blue")
     block1 = new Box(740,570,"blue")
@@ -85,6 +86,23 @@ function draw(){
     block14.display()
     block15.display()
     block16.display()
+    block1.score()
+    block2.score()
+    block3.score()
+    block4.score()
+    block5.score()
+    block6.score()
+    block7.score()
+    block8.score()
+    block9.score()
+    block10.score()
+    block11.score()
+    block12.score()
+    block13.score()
+    block14.score()
+    block15.score()
+    block16.score()
+
 
     blocka1.display()
     blocka2.display()
@@ -105,6 +123,11 @@ function draw(){
 
     polygon.display()
     slingshot.display()
+
+    textSize (30)
+    fill ("blue")
+    noStroke()
+    text ("Score:"+score,600,50)
 }
 function mouseDragged(){
     Matter.Body.setPosition(polygon.body,{x:mouseX,y:mouseY})
